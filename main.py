@@ -31,7 +31,7 @@ dict1 = {
 dict2 = {value:key for key,value in dict1.items()}
 
 def encrypytion():
-    user = input("Enter word for encrypting :")
+    user = input("Enter word for encrypting :").lower()
     encrypyted = ""
     for i in user:
         encrypyted += dict1[i]
