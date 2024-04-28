@@ -1,4 +1,4 @@
-list = {
+dict1 = {
         'a': '@',
         'b': '!',
         'c': '#',
@@ -24,14 +24,27 @@ list = {
         'w': ',',
         'x': '.',
         'y': '?',
-        'z': '/'
+        'z': '/',
+        ' ': ' '
     }
+
+dict2 = {value:key for key,value in dict1.items()}
 
 def encrypytion():
     user = input("Enter word for encrypting :")
     encrypyted = ""
     for i in user:
-        encrypyted += list[i]
+        encrypyted += dict1[i]
     print(encrypyted)
 
+def decryption():
+    user1 = input("Enter word for decrypting :")
+    decrypted = ""
+    for i in user1:
+        decrypted += dict2[i]
+    print(decrypted)
+    
+
 encrypytion()
+decryption()
+
