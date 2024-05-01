@@ -45,6 +45,18 @@ def decryption():
     print(decrypted)
     
 
-encrypytion()
-decryption()
+while True:
+    user_want_to_do = input("Enter 'E' for encrypting and 'D' for decrypting or 'X' for stop program :").lower()
 
+    if user_want_to_do == "e":
+        encrypytion()
+
+    elif user_want_to_do == "d":
+        decryption()
+
+    elif user_want_to_do == "x":
+        break
+    else:
+        break
+
+print("Program end")
