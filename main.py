@@ -1,49 +1,75 @@
 dict1 = {
-        'a': '@',
-        'b': '!',
-        'c': '#',
-        'd': '$',
-        'e': '%',
-        'f': '^',
-        'g': '&',
-        'h': '*',
-        'i': '(',
-        'j': ')',
-        'k': '_',
-        'l': '-',
-        'm': '+',
-        'n': '=',
-        'o': '[',
-        'p': ']',
-        'q': '{',
-        'r': '}',
-        's': ':',
-        't': ';',
-        'u': '<',
-        'v': '>',
-        'w': ',',
-        'x': '.',
-        'y': '?',
-        'z': '/',
-        ' ': ' '
+        'a': '@^&@',
+        'b': '!*(@',
+        'c': '#GUW',
+        'd': '$IUH',
+        'e': '%H&@',
+        'f': '^%@B',
+        'g': '&JW*',
+        'h': '*@S9',
+        'i': '(<sW',
+        'j': ')}W|',
+        'k': '_V~^',
+        'l': '-hsN',
+        'm': '+@$%',
+        'n': '=V(#',
+        'o': '[B$@',
+        'p': ']G#Y',
+        'q': '{C@(',
+        'r': '}BW%',
+        's': ':BA%',
+        't': ';N$@',
+        'u': '<HW)',
+        'v': '$@->',
+        'w': ',CZZ',
+        'x': '.HW@',
+        'y': '?jw5',
+        'z': '/scF',
+        ' ': '?^s8'
     }
 
 dict2 = {value:key for key,value in dict1.items()}
 
+# Function for Encrypting words
+
 def encrypytion():
     user = input("Enter word for encrypting :").lower()
-    encrypyted = ""
+    encrypyted_word = ""
     for i in user:
-        encrypyted += dict1[i]
-    print(encrypyted)
+        if i in dict1:
+            encrypyted_word += dict1[i]
+        else:
+            encrypyted_word += i
+    print(encrypyted_word)
+
+# function for Decrypting (encrypted words)
 
 def decryption():
+    l1 = []
+    val1 = 0
+    val2 = 4
+    decrypted_word = "" 
+
     user1 = input("Enter word for decrypting :")
-    decrypted = ""
-    for i in user1:
-        decrypted += dict2[i]
-    print(decrypted)
-    
+
+    while True:
+        l1.append(user1[val1:val2])
+        val1 = val2
+        val2 += 4
+
+        if val2 >= len(user1)+1:
+            break
+        
+    for i in l1:
+        if i in dict2:
+            decrypted_word += dict2[i]
+        else:
+            decrypted_word += i
+        
+
+    print(decrypted_word.capitalize())
+
+# what user want to do 
 
 while True:
     user_want_to_do = input("Enter 'E' for encrypting and 'D' for decrypting or 'X' for stop program :").lower()
