@@ -33,14 +33,17 @@ dict2 = {value:key for key,value in dict1.items()}
 # Function for Encrypting words
 
 def encrypytion():
-    user = input("Enter word for encrypting :").lower()
+    user = input("\n =>Enter word for encrypting :").lower()
     encrypyted_word = ""
     for i in user:
         if i in dict1:
             encrypyted_word += dict1[i]
         else:
             encrypyted_word += i
-    print(encrypyted_word)
+    
+    encrypyted_word_v2 = encrypyted_word[::-1] 
+
+    print(f"\n =>{encrypyted_word_v2}")
 
 # function for Decrypting (encrypted words)
 
@@ -50,7 +53,7 @@ def decryption():
     val2 = 4
     decrypted_word = "" 
 
-    user1 = input("Enter word for decrypting :")
+    user1 = input("\n =>Enter word for decrypting :")[::-1]
 
     while True:
         l1.append(user1[val1:val2])
@@ -65,14 +68,13 @@ def decryption():
             decrypted_word += dict2[i]
         else:
             decrypted_word += i
-        
 
     print(decrypted_word.capitalize())
 
 # what user want to do 
 
 while True:
-    user_want_to_do = input("Enter 'E' for encrypting and 'D' for decrypting or 'X' for stop program :").lower()
+    user_want_to_do = input("\n =>Enter 'E' for encrypting and 'D' for decrypting or 'X' for stop program :").lower()
 
     if user_want_to_do == "e":
         encrypytion()
